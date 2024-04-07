@@ -5,8 +5,7 @@ const router = express.Router();
 // Mostrar todos los alquileres
 router.get("/alquileres", async (req, res) => {
     try {
-        const data = await AlquilerConsulta.find()
-                                            .maxTimeMS(60000); 
+        const data = await AlquilerConsulta.find().select("-__v").maxTimeMS(60000);
         
         if (!data || data.length === 0) {
             return res.status(404).json({ message: "No se encontraron datos" });

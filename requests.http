@@ -3,25 +3,29 @@ POST http://localhost:3000/api/alquileres HTTP/1.1
 Content-Type: application/json
 
 {
-    "direccion": "Av. Principal #456",
-    "fecha_entrega": "2024-04-10",
-    "fecha_retorno": "2024-04-15",
-    "estado": "En proceso",
-    "identificacion_cliente": "9876543210",
-    "nombre": "Ana",
-    "apellido": "Martinez",
-    "telefono": "555-6789",
+    "direccion": "Avenida Libertad #456",
+    "fecha_entrega": "2024-04-15",
+    "fecha_retorno": "2024-04-20",
+    "estado": 2,
+    "identificacion_cliente": 987654321,
+    "nombreCompleto": "María García",
+    "telefono": 5559876,
     "enseres": [
         {
-            "cantidad": 6,
-            "enser": "Sofá"
+            "cantidad": 8,
+            "enser": "Mueble de TV"
         },
         {
-            "cantidad": 10,
-            "enser": "Sillas"
+            "cantidad": 12,
+            "enser": "Mesa de centro"
+        },
+        {
+            "cantidad": 5,
+            "enser": "Sillas de plástico"
         }
     ]
 }
+
 
 ###
 GET http://localhost:3000/api/alquileres HTTP/1.1
