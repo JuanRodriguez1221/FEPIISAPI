@@ -5,7 +5,9 @@ const router = express.Router();
 // Mostrar todos los alquileres
 router.get("/alquileres", async (req, res) => {
     try {
-        const data = await AlquilerConsulta.find();
+        const data = await AlquilerConsulta.find()
+                                            .maxTimeMS(60000); 
+        
         if (!data || data.length === 0) {
             return res.status(404).json({ message: "No se encontraron datos" });
         }
@@ -15,6 +17,7 @@ router.get("/alquileres", async (req, res) => {
         return res.status(500).json({ message: "Error al buscar documentos", error: error.message });
     }
 });
+
 
 // Crear un nuevo alquiler
 router.post("/alquileres", (req, res) => {

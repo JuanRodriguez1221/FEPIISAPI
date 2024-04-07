@@ -3,34 +3,25 @@ POST http://localhost:3000/api/alquileres HTTP/1.1
 Content-Type: application/json
 
 {
-    "direccion": "Calle Principal #123",
-    "fecha_entrega": "2024-04-07",
-    "fecha_retorno": "2024-04-10",
-    "estado": "Pendiente",
-    "identificacion_cliente": "1234567890",
-    "nombre": "Juan",
-    "apellido": "Andres",
-    "telefono": "555-1234",
+    "direccion": "Av. Principal #456",
+    "fecha_entrega": "2024-04-10",
+    "fecha_retorno": "2024-04-15",
+    "estado": "En proceso",
+    "identificacion_cliente": "9876543210",
+    "nombre": "Ana",
+    "apellido": "Martinez",
+    "telefono": "555-6789",
     "enseres": [
+        {
+            "cantidad": 6,
+            "enser": "Sofá"
+        },
         {
             "cantidad": 10,
             "enser": "Sillas"
-        },
-        {
-            "cantidad": 15,
-            "enser": "Mesas"
-        },
-        {
-            "cantidad": 15,
-            "enser": "Manteles"
-        },
-        {
-            "cantidad": 10,
-            "enser": "Bafles"
         }
     ]
 }
-
 
 ###
 GET http://localhost:3000/api/alquileres HTTP/1.1
@@ -39,7 +30,7 @@ GET http://localhost:3000/api/alquileres HTTP/1.1
 GET http://localhost:3000/api/alquileres/6611b19d666653fbc52dccbe HTTP/1.1
 
 ###
-DELETE http://localhost:3000/api/alquileres/6611b19d666653fbc52dccbe HTTP/1.1
+DELETE http://localhost:3000/api/alquileres/6611af45643bf1177bfe69bd HTTP/1.1
 
 ### 
 PUT http://localhost:3000/api/alquileres/6611b185666653fbc52dccb1 HTTP/1.1
