@@ -1,21 +1,20 @@
-const { MongoClient } = require('mongodb');
 
-// Cadena de conexión a MongoDB Atlas
-const uri = 'mongodb+srv://fepiis:fepi123@cluster0.paupups.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0&socketTimeoutMS=60000';
-
-// Crear un cliente de MongoDB
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+const mongoose = require("mongoose");
+require("dotenv").config();
 
 async function conectarMongoDB() {
     try {
-        // Conectar al cliente
-        await client.connect();
-        console.log("Conectado a MongoDB Atlas");
-        return client;
+        await mongoose.connect(process.env.MONGODB_URI, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        });
+        console.log("Connected to MongoDB Atlas");
     } catch (error) {
-        console.error("Error al conectar a MongoDB Atlas:", error);
-        throw error; // Re-lanza el error para que sea manejado por quien llame a esta función
+        console.error("Error connecting to MongoDB Atlas:", error);
+        throw error;
     }
 }
 
 module.exports = conectarMongoDB;
+
+
